@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchKart | Home</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="banner">
+      <header>
+        <a href="./index.html" class="logo">WatchKart</a>
+        <div class="toggle" onclick="toggle();"></div>
+      </header>
+      <div class="content">
+        <div class="contentBx">
+          <h2>
+            Future On <br />
+            your hand
+          </h2>
+          <p>
+            Holisticly incentivize revolutionary collaboration and idea sharing
+            before cost effective users. Actual focused services before highly
+            efficient human capital...!
+          </p>
+          <a href="./html/buy.html">Buy Now</a>
+        </div>
+        <div class="imgBx">
+          <img src="./images/watch1.png" alt="watch" />
+        </div>
+      </div>
+      <ul class="sci">
+        <li>
+          <a href="#" id="fb"><img src="./images/facebook.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./images/twitter.png" /></a>
+        </li>
+
+        <li>
+          <a href="#"><img src="./images/instagram.png" /></a>
+        </li>
+      </ul>
+      <ul class="menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./html/varites.html">Products</a></li>
+        <li><a href="./html/buy.html">Buy Now</a></li>
+      </ul>
+    </section>
+    <script type="text/javascript">
+      function toggle() {
+        const toggle = document.querySelector(".toggle");
+        const banner = document.querySelector(".banner");
+        toggle.classList.toggle("active");
+        banner.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

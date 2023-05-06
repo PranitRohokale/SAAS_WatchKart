@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins', sans-serif";
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(#51AFE9 75%,white ); */
+  background: linear-gradient(#404040, #151415);
+
+}
+.card {
+  position: relative;
+  width: 325px;
+  height: 440px;
+  background: #F8FBFF;
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transition: 1s;
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.15),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+  /* overflow: hidden; */
+  border-radius: 20px 0 20px 0;
+}
+.card:hover {
+  transform: perspective(2000px) translateX(50%);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.15),
+    0 10px 10px rgba(0, 0, 0, 0.15);
+}
+.card .cover {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  background: #e1e9f3;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+  transform-origin: left;
+  border-radius: 20px 0 20px 0;
+}
+.card:hover .cover {
+  transform: rotateY(-180deg);
+}
+.card .cover img {
+  max-width: 70%;
+  z-index: 1;
+}
+.card .cover::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 150%;
+  background: #fff;
+  transform: rotate(36.5deg);
+  box-shadow: 0 0 0 20px #28e651;
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+.card:hover .cover::before {
+  width: 0;
+  box-shadow: 0 0 0 280px #28e651;
+  transform: rotate(143.5deg);
+}
+
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+}
+
+.card .details h3 {
+  font-weight: 500;
+  margin: 5px 0;
+}
+.card .details h2 {
+  font-size: 1.5em;
+  color: #28e651;
+  font-weight: 600;
+}
+.card .details p {
+  color: #82898f;
+}
+
+.card .details a {
+  display: inline-block;
+  border: 1px solid #ff226d;
+  color: #ff226d;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+  margin-top: 5px;
+}
+.card .details a:hover {
+  letter-spacing: 4px;
+  background: #ff226d;
+  color: #fff;
+}
+
+.card .details img {
+  max-width: 50%;
+  z-index: 1;
+}
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+}
+
+header .logo {
+  font-size: 2em;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.5s;
+  transform-origin: right;
+}
+/* header .logo ::before{
+  content: '';
+  height: 2px;
+  width: 100px;
+  background: #28e651;
+  position: absolute;
+  top: 67px;
+  left: 105px;
+  transition: 0.3s;
+  transform-origin: left;
+  visibility: hidden;
+} */
+
+header .active .logo {
+    transform: scale(0);
+    transform-origin: left;
+  }
+.toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url(./images/menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    cursor: pointer;
+  }
+
+  .toggle.active {
+    background: url(./images/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+  }
+
+/* quote */
+.quote {
+    position: absolute;
+    bottom: 7%;
+    margin: 10px;
+}
+.quote h2{
+    color: #ff226d;
+    text-decoration: wavy;
+    text-transform: capitalize;
+    letter-spacing: 1.3px;
+    font-weight: bold;
+    font-size: 2em;
+    font-family:'Times New Roman', Times, serif;
+}
+.quote a {
+    display: inline-block;
+    border: 1px solid #ff226d;
+    color: #ff226d;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.5s;
+    margin-top: 5px;
+    font-size: 1.4em;
+  }
+  .quote a:hover {
+    letter-spacing: 4px;
+    background: #ff226d;
+    color: #fff;
+  }
+  @media (max-width: 990px){
+    .quote {
+        position: absolute;
+        bottom: -6%;
+        margin: 10px;
+        padding: 2px;
+    }
+    body {
+        min-height: 110vh;
+    }
+  }
+  @media (max-width: 550px){
+    .card .cover,
+    .card .cover::before  {
+        visibility: hidden;
+    }
+    .card:hover .cover::before {
+        width: 0;
+        box-shadow: 0 0 0 280px #28e651;
+        /* transform: rotate(143.5deg); */
+      }
+      .card:hover {
+        transform: perspective(0px) translateX(0%);
+        box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.15),
+          0 10px 10px rgba(0, 0, 0, 0.15);
+      }
+      .quote {
+        position: absolute;
+        bottom: -6%;
+        margin: 10px;
+        padding: 2px;
+    }
+    body {
+        min-height: 110vh;
+    }
+  }
